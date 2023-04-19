@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- 자바스크립트 함수 정의 -->
+<script type="text/javascript">
+/*
+ 	const 변수 : 범위는 {함수블럭} or {중괄호 블럭} 내부(Block 스코프)
+ 		- 한번 선언되면 같은 이름으로 재선언 불가.(동일 블럭의 경우)
+ 		- 변수에 값을 다시 설정하는것도 불가능
+ 		- const 변수는 선언될 때 값을 할당해야함
+ */
+ 
+ function getResult(){
+ 		// const에 자바스크립트 객체 생성해서 할당
+ 		const personObj = {name : "홍길동", age : 21, address:"대전광역시"};
+ 		console.log(personObj);
+ 		
+ 		// 속성값 변경
+ 		personObj.age = 18;
+ 		personObj.address = "광주광역시";
+ 		console.log(personObj);
+ 		
+ 		// 오류 identifier 'personObj' has already been declared
+ 		// const personObj = {name:"장길산", age : 25, address:"울산광역시"};
+ 		{
+ 			// 블러 스코프이기 때문에 새로운 블럭 내에서는 같은 이름으로 선언 가능
+ 			const personObj = {name:"장길산", age : 25, address:"울산광역시"};
+ 			console.log(personObj);
+ 		}
+ 	}
+ 
+</script>
+<title>자바스크립트 변수 let</title>
+</head>
+<body>
+	<!-- HTML요소에서 onclick 이벤트 함수 연결 -->
+	<input type="button" onclick="getResult()" value="var변수값 출력">
+
+	<!-- id 속성 -->
+	<div id="demo">결과가 표시될 자리</div>
+
+</body>
+</html>

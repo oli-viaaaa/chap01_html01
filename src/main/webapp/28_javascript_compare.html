@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type = "text/javascript">
+/*
+ 	=== 연산, strict equal operator
+ 	 - 비교하는 양쪽의 타입(자료형)까지 비교 대상에 포함
+ 	 - 양쪽 타입이 다르면 무조건 false
+ 	 - 양쪽 값은 당연히 같아야 true
+ */
+ 
+ function getResult(){
+	// 0과 == false는 같음
+	console.log(0 == false); // true
+	
+	// 0과 false는 같지 않음
+	console.log(0 === false); // false
+	console.log(typeof 0); // number
+	console.log(typeof false); // boolean
+	
+	console.log("===================="); // false
+	
+	// 2와 == "2" 또는 2와 == '2' 같음
+	console.log(2 == '2'); // true
+	
+	// 2와 == "2"는 같지 않음
+	console.log(2 === "2"); // true
+	console.log(typeof 2); // false
+	console.log(typeof "2"); // false
+	
+}
+</script>
+<title>자바스크립트 변수 const</title>
+</head>
+<body>
+	
+	<!-- HTML요소에서 onclick 이벤트 함수 연결 -->
+	<input type="button" onclick="getResult()" value="var변수값 출력">
+
+	<!-- id 속성 -->
+	<div id="demo">결과가 표시될 자리</div>
+	
+</body>
+</html>

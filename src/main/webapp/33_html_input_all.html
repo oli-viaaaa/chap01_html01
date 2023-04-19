@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script>
+	function validation(){
+		// text
+		let fname = document.getElementById('fname').value;
+		let lname = document.getElementById('lname').value;
+		console.log('fname',fname);
+		console.log('lname',lname);
+		
+		// radio button
+		var elements = document.getElementsByName('fav_language'); // 이름이 공통되어 있어 한번만 소환
+		for(var i = 0; i < elements.length; i++){
+			// checked 속성이 true와 같은지 비교
+			if(elements[i].checked === true){ // radio 박스가 체크 되었는지 확인
+				console.log(elemants[i].value); // checked 된 값만 출력
+			}
+		}
+		
+		// checkbox
+		// checkbox element를 찾습니다
+		var check1_stat = document.getElementById('vehicle1').chedcked; // 이름이 각기 달라 각각 소환
+		var check2_stat = document.getElementById('vehicle2').chedcked; // 원한다면 이름을 공통으로 변환하여 한번만 소환가능
+		var check3_stat = document.getElementById('vehicle3').chedcked;
+		console.log('check1_stat',check1_stat);
+		console.log('check2_stat',check2_stat);
+		console.log('check3_stat',check3_stat);
+		
+		// date value
+		var birthday = document.getElementById('birthday').value;
+		console.log('birthday',birthday);
+		
+		// bdaymonth
+		var bdaymonth = document.getElementById('bdaymonth').value;
+		console.log('bdaymonth',bdaymonth);
+		
+	}
+	</script>
+</head>
+<body>
+	<h2>Html Input Element</h2>
+	
+	<!-- input type = "text" -->
+	<form id = "inputform">
+		<label for = "fname">First name:</label><br>
+		<input type = "text" id = "fname" name = "fname" value = "John"><br> /*value= 초기값 없어도 무방*/
+		<label for = "lname">Last name:</label><br>
+		<input type = "text" id = "lname" name = "lname" value = "Doe"><br><br>
+	
+		<!-- input type = "radio"  3중 하나만 선택 한번에 뽑아 올리기 위해 name 값 통일-->
+		<input type = "radio" id = "html" name = "fav_language" value ="HTML">
+		<label for = "html">HTML</label><br>
+		<input type = "radio" id = "css" name = "fav_language" value = "CSS">
+		<label for = "CSS">CSS</label><br>
+		<input type = "radio" id = "javascript" name = "fav_language" value = "javascript">
+		<label for = "javascript">javascript</label><br><br>
+		
+		<!-- input type = "checkbox" 여러개(중복) 선택 가능 ID는 필요할때만 줘도 됨-->
+		<input type = "checkbox" id = "vehicle1" name = "vehicle1" value = "Bike">
+		<label for = "vehicle1">I have a Bike</label><br>
+		<input type = "checkbox" id = "vehicle2" name = "vehicle2" value = "Car">
+		<label for = "vehicle2">I have a Car</label><br>
+		<input type = "checkbox" id = "vehicle3" name = "vehicle3" value = "Boat">
+		<label for = "vehicle3">I have a Boat</label><br>
+		
+		<!-- input type = "button" -->
+		<input type = "button" onclick = "alter('Hello World')" value = "Click Me!"><br><br>
+		
+		<!-- input type = "color" -->
+		<input type = "color" id = "favcolor" name = "favcolor" value = "#ff0000"><br><br>
+		
+		<!-- input type = "date" -->
+		<label for = "birthday">Birthday : </label>
+		<input type = "date" id = "birthday" name = "birthday"><br><br>
+		
+		<label for = "datemin">Enter a date after 2000-01-01:</label>
+		<input type = "date" id = "datemin" name = "datemin" min = "2000-01-02"><br>
+		
+		<label for = "datemax">Enter a date before 1980-01-01:</label>
+		<input type = "date" id = "datemax" name = "datemax" max = "1979-12-31"><br><br>
+		
+		<!-- input type = "email" -->
+		<label for = "email">Enter your email:</label>
+		<input type = "email" id = "email" name = "email"><br><br>
+		
+		<!-- input type = "file" -->
+		<input type = "file" id = "myfile" name = "myfile"><br><br>
+		
+		<!-- input type = "hidden" 게시판 만들때 숨겨놓았다 작업할때-->
+		hidden : <input type = "hidden" id = "custid" name = "custid" value = "3487"><br><br>
+		
+		<!-- input type = "month" -->
+		<label for = "bdaymonth">Birthday (month and year):</label>
+		<input type = "month" id = "bdaymonth" name = "bdaymonth"><br><br>
+		
+		<!-- input type = "number" -->
+		<label for = "quantity">Quantity(between 1 and 5):</label>
+		<input type = "number" id = "quantity" name = "quantity" min = "1" max = "5"><br><br>
+		
+		<!-- input type = "tel" -->
+		<input type = "tel" id = "phone" name = "phone" pattern = "[0-9]{3}-[0-9]{4}-{0-9]{4}"><br><br>
+		
+		<!-- input type = "submit" -->
+		<input type = "submit" value = "Submit"> // 값 검증
+		<!-- input type = "reset" -->
+		<input type = "reset">
+	</form>
+
+</body>
+</html>
